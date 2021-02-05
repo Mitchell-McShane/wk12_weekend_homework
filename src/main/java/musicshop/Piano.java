@@ -2,11 +2,12 @@ package musicshop;
 
 import behaviours.IPlay;
 
-public class Piano implements IPlay {
+public class Piano extends Instrument implements IPlay {
 
     private String manufacturer;
 
-    public Piano(String manufacturer){
+    public Piano(String colour, String type, String manufacturer) {
+        super(colour, "Piano");
         this.manufacturer = manufacturer;
     }
 

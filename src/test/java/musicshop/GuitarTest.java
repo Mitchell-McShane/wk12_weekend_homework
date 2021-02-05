@@ -11,7 +11,29 @@ public class GuitarTest {
 
     @Before
     public void before(){
-        guitar = new Guitar("Gibson Les Paul",6);
+        guitar = new Guitar("Blue","String", "Gibson Les Paul", 6);
+    }
+
+    @Test
+    public void hasColour() {
+        assertEquals("Blue", guitar.getColour());
+    }
+
+    @Test
+    public void hasSetColour(){
+        guitar.setColour("Red");
+        assertEquals("Red", guitar.getColour());
+    }
+
+    @Test
+    public void hasType(){
+        assertEquals("String", guitar.getType());
+    }
+
+    @Test
+    public void hasSetType(){
+        guitar.setType("Electric");
+        assertEquals("Electric", guitar.getType());
     }
 
     @Test
@@ -34,6 +56,11 @@ public class GuitarTest {
     public void canSetNumberOfStrings(){
         guitar.setNumberOfStrings(7);
         assertEquals(7, guitar.getNumberOfStrings());
+    }
+
+    @Test
+    public void canPlay(){
+        assertEquals("Rock on!", guitar.play());
     }
 
 }

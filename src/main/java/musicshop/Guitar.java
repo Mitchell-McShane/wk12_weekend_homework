@@ -2,12 +2,13 @@ package musicshop;
 
 import behaviours.IPlay;
 
-public class Guitar implements IPlay {
+public class Guitar extends Instrument implements IPlay {
 
     private String model;
     private int numberOfStrings;
 
-    public Guitar(String model, int numberOfStrings) {
+    public Guitar(String colour, String type, String model, int numberOfStrings) {
+        super(colour, "String");
         this.model = model;
         this.numberOfStrings = numberOfStrings;
     }
