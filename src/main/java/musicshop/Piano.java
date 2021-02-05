@@ -1,13 +1,11 @@
 package musicshop;
 
-import behaviours.IPlay;
-
-public class Piano extends Instrument implements IPlay {
+public class Piano extends Instrument {
 
     private String manufacturer;
 
-    public Piano(String colour, String type, String manufacturer) {
-        super(colour, "Piano");
+    public Piano(String colour, String type, int buyPrice, int sellPrice, String manufacturer) {
+        super(colour, type, buyPrice, sellPrice);
         this.manufacturer = manufacturer;
     }
 
@@ -21,5 +19,9 @@ public class Piano extends Instrument implements IPlay {
 
     public String play(){
         return "plink";
+    }
+
+    public int calculateMarkup(){
+        return this.sellPrice - this.buyPrice;
     }
 }
