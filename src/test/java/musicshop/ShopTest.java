@@ -21,6 +21,20 @@ public class ShopTest {
     }
 
     @Test
+    public void canAddPianoToStock(){
+        piano = new Piano("Brown", "Piano", 1500,1800,"Roland RP701");
+        shop.addStock(item);
+        assertEquals(1, shop.stockCount());
+    }
+
+    @Test
+    public void canRemoveFromStock(){
+        shop.addStock(item);
+        shop.removeFromStock(item);
+        assertEquals(0, shop.stockCount());
+    }
+
+    @Test
     public void hasName(){
         assertEquals("Ray's Music Exchange", shop.getName());
     }
@@ -42,18 +56,5 @@ public class ShopTest {
         assertEquals(2, shop.stockCount());
     }
 
-    @Test
-    public void canAddPianoToStock(){
-        piano = new Piano("Brown", "Piano", 1500,1800,"Roland RP701");
-        shop.addStock(item);
-        assertEquals(1, shop.stockCount());
-    }
-
-    @Test
-    public void canRemoveFromStock(){
-        shop.addStock(item);
-        shop.removeFromStock(item);
-        assertEquals(0, shop.stockCount());
-    }
 
 }
